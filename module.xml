@@ -582,10 +582,10 @@ loadTransectFrom(String uuid) {
   String tabgroup = "Transect";
   setUuid(tabgroup, uuid);
   if (isNull(uuid)) return;
-  ref = "Control/Identifiers/Next_Unit_ID"
+  ref = "Control/Identifiers/Next_Unit_ID";
   unitQuery = "SELECT max(measure)+1 from latestnondeletedaentvalue join attributekey using (attributeid) where attributename = 'Unit_ID'";
   fetchOne(unitQuery, new FetchCallback() {
-    onFetch(result) {
+    onFetch(result) { 
       if (isNull(result)) setFieldValue(ref, "1"          );
       else                setFieldValue(ref, result.get(0));
     }
