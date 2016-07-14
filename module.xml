@@ -463,9 +463,15 @@
     </cols>
     <Journal_Entry_Number f="id autonum notnull">
       <str>
-        <fmt>Journal $2</fmt>
+        <pos>2</pos>
+        <fmt>- Journal Entry $2</fmt>
       </str>
     </Journal_Entry_Number>
+    <author f="id">
+      Author
+      <pos>1</pos>
+      <fmt>$2</fmt>
+    </author>
     <Journal f="notnull"/>
   </Journal>
 </Journal>
