@@ -109,10 +109,9 @@
       <desc>Attach a screengrab using this feature. Can be uploaded from you device - locally via cloud software like Dropbox - or post fact.</desc>
     </Attach_a_Screengrab>
   </Survey_Procedure>
-  <Orbits>
+  <Orbits f="noscroll">
     <New_Orbit t="button" lc="Orbit"/>
     <Orbit_List t="list" ec="Orbit" />
-    <!-- GET RID OF SCROLL -->
   </Orbits>
   <Planetary_Coverage>
     <Dominant_Planet_Coverage t="checkbox" F="notnull">
@@ -187,7 +186,7 @@
         <fmt> - Orbit $2</fmt>
       </str>
     </Orbit_Number>
-    <Parent_Planet_Name>
+    <Parent_Planet_Name f="id">
       <str>
         <pos>1</pos>
         <fmt>$2</fmt>
