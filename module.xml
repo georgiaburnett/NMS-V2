@@ -188,7 +188,6 @@
         <fmt> - Orbit $2</fmt>
       </str>
     </Orbit_Number>
-    <Last_Orbit_Number f="web[view] readonly" />
     <Parent_Planet_Name>
       <str>
         <pos>1</pos>
@@ -429,7 +428,6 @@
         <fmt> - Row $2</fmt>
       </str>
     </Row_Number>
-    <Last_Row_Number f="web[view] readonly" />
     <Parent_Unit_ID f="id readonly">
       <str>
         <pos>2</pos>
@@ -609,28 +607,6 @@ replaceFirst(haystack, needle, replacement) {
   pre  = haystack.substring(0, i                                   );
   post = haystack.substring(   i+needle.length(), haystack.length());
   return pre + replacement + post;
-}
-
-
-newOrbit(){
-  String tabgroup = "Orbit";
-  setUuid(tabgroup, null);
-  newTabGroup(tabgroup);
-  setFieldValue("Orbit/Orbit/Parent_Planet_Name", getFieldValue("Transect/General_Information/Planet_Name"));
-  populateAuthorAndTimestamp(tabgroup);
-  setFieldToIdentifier("Orbit", "Orbit/Orbit/Last_Orbit_Number");
-}
-
-
-newRow(){
-  String tabgroup = "Row";
-
-
-  setUuid(tabgroup, null);
-  newTabGroup(tabgroup);
-  populateAuthorAndTimestamp(tabgroup);
-  setFieldToIdentifier("Row", "Row/Row/Last_Row_Number");
-
 }
 
 </logic>
