@@ -513,6 +513,7 @@ setStartTimestamp_Journal() {
 
 addOnEvent("Transect/General_Information", "show", "populateRecent()");
 addOnEvent("Control/Main/RecentEntities"   , "click" , "loadEntity();");
+addOnEvent("Control/Journal/RecentEntities"   , "click" , "loadEntity();");
 
 
 populateRecent(){
