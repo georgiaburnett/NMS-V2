@@ -1858,7 +1858,7 @@ populateRecent(){
                        " LIMIT ? "+
                        "OFFSET ? ";
 
-  populateCursorList(refEntityList, searchQuery, 5);
+  populateCursorList(refEntityList, searchQuery, 10);
   refreshTabgroupCSS(tabgroup);
 
 
@@ -1889,9 +1889,45 @@ newUnit(){
   incAutoNum(autoNumDest);
 
 
-  setFieldValue("Unit/General_Information/Parent_Transect_ID", getFieldValue("Transect/General_Information/Transect_ID"));
   setFieldValue("Unit/General_Information/Parent_Planet_Name", getFieldValue("Transect/General_Information/Planet_Name"));
   
+}
+
+
+newTransect(){
+  String tabgroup = "Transect";
+  setFieldValue("Control/Identifiers/Next_Unit_ID", 1);
+
+  setUuid(tabgroup, null);
+  newTabGroup(tabgroup);
+  populateAuthorAndTimestamp(tabgroup);
+}
+
+
+
+loadTransectFrom(String uuid) {
+  String tabgroup = "Transect";
+  setUuid(tabgroup, uuid);
+  if (isNull(uuid)) return;
+  ref = "Control/Identifiers/Next_Unit_ID";
+  unitQuery = "SELECT max(measure)+1 from latestnondeletedaentvalue join attributekey using (attributeid) where attributename = 'Unit_ID'";
+  fetchOne(unitQuery, new FetchCallback() {
+    onFetch(result) { 
+      if (isNull(result)) setFieldValue(ref, "1"          );
+      else                setFieldValue(ref, result.get(0));
+    }
+  });
+
+  showTabGroup(tabgroup, uuid);
+}
+
+
+newOrbit(){
+  String tabgroup = "Orbit";
+  setUuid(tabgroup, null);
+  newTabGroup(tabgroup);
+  setFieldValue("Orbit/Orbit/Parent_Planet_Name", getFieldValue("Transect/General_Information/Planet_Name"));
+  populateAuthorAndTimestamp(tabgroup);
 }
 
 
