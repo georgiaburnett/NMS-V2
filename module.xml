@@ -183,7 +183,7 @@
     <Orbit_Number b="decimal" f="id notnull">
       <str>
         <pos>2</pos>
-        <fmt> - Orbit $2</fmt>
+        <fmt>- Orbit $2</fmt>
       </str>
     </Orbit_Number>
     <Parent_Planet_Name f="id">
@@ -212,7 +212,7 @@
     <Unit_ID f="id autonum notnull">
       <str>
         <pos>2</pos>
-        <fmt> - Unit $2</fmt>
+        <fmt>- Unit $2</fmt>
       </str>
     </Unit_ID>
     <cols>
@@ -414,7 +414,6 @@
         Record End Timestamp
       </EndTimestampTrigger>
     </cols>    
-    <Finish_Unit t="button" l="Control"/>
   </Revisit_Unit>
 </Unit>
 
@@ -423,13 +422,13 @@
     <Row_Number b="decimal" f="id notnull">
       <str>
         <pos>3</pos>
-        <fmt> - Row $2</fmt>
+        <fmt>- Row $2</fmt>
       </str>
     </Row_Number>
     <Parent_Unit_ID f="id readonly">
       <str>
         <pos>2</pos>
-        <fmt> - Unit $2</fmt>
+        <fmt>- Unit $2</fmt>
       </str>      
     </Parent_Unit_ID>
     <Parent_Planet_Name f="id readonly">
