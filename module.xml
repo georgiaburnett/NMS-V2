@@ -188,7 +188,7 @@
         <fmt> - Orbit $2</fmt>
       </str>
     </Orbit_Number>
-    <Last_Orbit_Number f="id readonly" />
+    <Last_Orbit_Number f="web[view] readonly" />
     <Parent_Planet_Name>
       <str>
         <pos>1</pos>
@@ -429,6 +429,7 @@
         <fmt> - Row $2</fmt>
       </str>
     </Row_Number>
+    <Last_Row_Number f="web[view] readonly" />
     <Parent_Unit_ID f="id readonly">
       <str>
         <pos>2</pos>
