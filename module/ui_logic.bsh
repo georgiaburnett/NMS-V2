@@ -638,8 +638,8 @@ validateFields(List fields, String format) {
 validateTransect() {
   List f = new ArrayList(); // Fields to be validated
 
-  f.add(fieldPair("Transect/General_Information/Transect_ID", "{Transect_ID}"));
   f.add(fieldPair("Transect/General_Information/Planet_Name", "{Planet_Name}"));
+  f.add(fieldPair("Transect/General_Information/Planet_Nickname", "{Planet_Nickname}"));
   f.add(fieldPair("Transect/General_Information/Geotag", "{Geotag}"));
   f.add(fieldPair("Transect/General_Information/Number_Of_Orbits", "{Number_Of_Orbits}"));
   f.add(fieldPair("Transect/General_Information/Survey_Method", "{Survey_Method}"));
@@ -1111,19 +1111,10 @@ loadEntityFrom(String entityID) {
 newTransect(){
   String tabgroup = "Transect";
 
-  String autoNumSource = "";
-  autoNumSource = getFieldValue("Control/Identifiers/Next_Transect_ID");
-  if (isNull(autoNumSource)) {
-    showWarning("{Alert}","{A_next_ID_has_not_been_entered_please_provide_one}");
-    return;
-  }
 
   setUuid(tabgroup, null);
   newTabGroup(tabgroup);
   populateAuthorAndTimestamp(tabgroup);
-  String autoNumDest = "";
-  autoNumDest = "Transect/General_Information/Transect_ID";
-  incAutoNum(autoNumDest);
 }
 
 duplicateTransect(){
@@ -1132,9 +1123,6 @@ duplicateTransect(){
 
   disableAutoSave(tabgroup);
 
-  String autoNumDest = "";
-  autoNumDest = "Transect/General_Information/Transect_ID";
-  incAutoNum(autoNumDest);
 
   clearGpsInTabGroup(tabgroup);
 
@@ -1655,7 +1643,6 @@ addOnEvent("Control", "show", "onShowAutonum()");
 
 getStartingIdPaths() {
   List l = new ArrayList();
-  l.add("Control/Identifiers/Next_Transect_ID");
   l.add("Control/Identifiers/Next_Unit_ID");
   l.add("Control/Identifiers/Next_Journal_Entry_Number");
 
@@ -1689,7 +1676,6 @@ for (ref : getStartingIdPaths()) {
 
 incAutoNum(String destPath) {
   Map destToSource = new HashMap();
-  destToSource.put("Transect/General_Information/Transect_ID", "Control/Identifiers/Next_Transect_ID");
   destToSource.put("Unit/General_Information/Unit_ID", "Control/Identifiers/Next_Unit_ID");
   destToSource.put("Journal/Journal/Journal_Entry_Number", "Control/Identifiers/Next_Journal_Entry_Number");
 

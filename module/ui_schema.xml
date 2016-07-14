@@ -44,7 +44,6 @@
               <Entity_List/>
             </Search>
             <Identifiers>
-              <Next_Transect_ID/>
               <Next_Unit_ID/>
               <Next_Journal_Entry_Number/>
             </Identifiers>
@@ -59,8 +58,8 @@
                   <StartTimestampTrigger/>
                 </Col_1>
               </Colgroup_0>
-              <Transect_ID/>
               <Planet_Name/>
+              <Planet_Nickname/>
               <author/>
               <Geotag/>
               <Number_Of_Orbits/>
@@ -113,7 +112,6 @@
             </Revisit>
             <Unit>
               <New_Unit/>
-              <Next_Transect_ID/>
               <Next_Unit_ID/>
               <Next_Journal_Entry_Number/>
               <Unit_List/>
@@ -122,6 +120,8 @@
           <Orbit>
             <Orbit>
               <Orbit_Number/>
+              <Last_Orbit_Number/>
+              <Parent_Planet_Name/>
               <Agriculture/>
               <Architecture/>
               <Communications/>
@@ -145,7 +145,6 @@
                   <StartTimestampTrigger/>
                 </Col_1>
               </Colgroup_0>
-              <Parent_Transect_ID/>
               <Parent_Planet_Name/>
               <author/>
               <Geotag_Unit/>
@@ -209,6 +208,8 @@
           <Row>
             <Row>
               <Row_Number/>
+              <Parent_Unit_ID/>
+              <Parent_Planet_Name/>
               <Metal/>
               <Sherd/>
               <Lithic/>
@@ -237,16 +238,13 @@
           <logic/>
         </faims>
       </instance>
-      <bind type="decimal" nodeset="/faims/Control/Identifiers/Next_Transect_ID"/>
       <bind type="decimal" nodeset="/faims/Control/Identifiers/Next_Unit_ID"/>
       <bind type="decimal" nodeset="/faims/Control/Identifiers/Next_Journal_Entry_Number"/>
-      <bind type="decimal" nodeset="/faims/Transect/General_Information/Transect_ID"/>
       <bind type="decimal" nodeset="/faims/Transect/General_Information/Number_Of_Orbits"/>
       <bind type="decimal" nodeset="/faims/Transect/General_Information/Number_of_Features"/>
       <bind type="decimal" nodeset="/faims/Transect/Survey_Procedure/Area_Surveyed"/>
       <bind type="decimal" nodeset="/faims/Transect/Survey_Procedure/Bearing"/>
       <bind type="decimal" nodeset="/faims/Transect/Planetary_Coverage/Percentage_of_Visable_Surface"/>
-      <bind type="decimal" nodeset="/faims/Control/Identifiers/Next_Transect_ID"/>
       <bind type="decimal" nodeset="/faims/Control/Identifiers/Next_Unit_ID"/>
       <bind type="decimal" nodeset="/faims/Control/Identifiers/Next_Journal_Entry_Number"/>
       <bind type="decimal" nodeset="/faims/Orbit/Orbit/Orbit_Number"/>
@@ -322,7 +320,7 @@
           <label>{New_Transect}</label>
         </trigger>
         <select1 appearance="compact" ref="RecentEntities">
-          <label>{RecentEntities}</label>
+          <label>{Recent_Entities}</label>
           <item>
             <label>Options not loaded</label>
             <value>0</value>
@@ -376,9 +374,6 @@
       </group>
       <group ref="Identifiers">
         <label>{Identifiers}</label>
-        <input ref="Next_Transect_ID" faims_style_class="required">
-          <label>{Next_Transect_ID}</label>
-        </input>
         <input ref="Next_Unit_ID" faims_style_class="required">
           <label>{Next_Unit_ID}</label>
         </input>
@@ -406,11 +401,11 @@
             </trigger>
           </group>
         </group>
-        <input faims_attribute_type="measure" ref="Transect_ID" faims_attribute_name="Transect ID" faims_style_class="required">
-          <label>{Transect_ID}</label>
-        </input>
         <input faims_attribute_type="measure" ref="Planet_Name" faims_attribute_name="Planet Name" faims_style_class="required">
           <label>{Planet_Name}</label>
+        </input>
+        <input faims_attribute_type="measure" ref="Planet_Nickname" faims_attribute_name="Planet Nickname" faims_style_class="required">
+          <label>{Planet_Nickname}</label>
         </input>
         <input ref="author" faims_attribute_name="Transect author" faims_attribute_type="measure" faims_read_only="true" faims_annotation="false" faims_certainty="false">
           <label>{Surveyor}</label>
@@ -565,9 +560,6 @@
         <trigger ref="New_Unit">
           <label>{New_Unit}</label>
         </trigger>
-        <input ref="Next_Transect_ID" faims_style_class="required">
-          <label>{Next_Transect_ID}</label>
-        </input>
         <input ref="Next_Unit_ID" faims_style_class="required">
           <label>{Next_Unit_ID}</label>
         </input>
@@ -589,6 +581,12 @@
         <label>{Orbit}</label>
         <input faims_attribute_type="measure" ref="Orbit_Number" faims_attribute_name="Orbit Number" faims_style_class="required">
           <label>{Orbit_Number}</label>
+        </input>
+        <input faims_attribute_type="measure" ref="Last_Orbit_Number" faims_attribute_name="Last Orbit Number" faims_read_only="true">
+          <label>{Last_Orbit_Number}</label>
+        </input>
+        <input faims_attribute_type="measure" ref="Parent_Planet_Name" faims_attribute_name="Parent Planet Name">
+          <label>{Parent_Planet_Name}</label>
         </input>
         <input faims_attribute_type="measure" ref="Agriculture" faims_attribute_name="Agriculture">
           <label>{Agriculture}</label>
@@ -644,9 +642,6 @@
             </trigger>
           </group>
         </group>
-        <input faims_attribute_type="measure" ref="Parent_Transect_ID" faims_attribute_name="Parent Transect ID" faims_read_only="true">
-          <label>{Parent_Transect_ID}</label>
-        </input>
         <input faims_attribute_type="measure" ref="Parent_Planet_Name" faims_attribute_name="Parent Planet Name" faims_read_only="true">
           <label>{Parent_Planet_Name}</label>
         </input>
@@ -856,6 +851,12 @@
         <label>{Row}</label>
         <input faims_attribute_type="measure" ref="Row_Number" faims_attribute_name="Row Number" faims_style_class="required">
           <label>{Row_Number}</label>
+        </input>
+        <input faims_attribute_type="measure" ref="Parent_Unit_ID" faims_attribute_name="Parent Unit ID" faims_read_only="true">
+          <label>{Parent_Unit_ID}</label>
+        </input>
+        <input faims_attribute_type="measure" ref="Parent_Planet_Name" faims_attribute_name="Parent Planet Name" faims_read_only="true">
+          <label>{Parent_Planet_Name}</label>
         </input>
         <input faims_attribute_type="measure" ref="Metal" faims_attribute_name="Metal">
           <label>{Metal}</label>
