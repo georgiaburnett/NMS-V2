@@ -537,6 +537,31 @@ populateRecent(){
 }
 
 
+addOnEvent("Journal/Journal", "show", "populateRecent()");
+addOnEvent("Control/Journal/RecentEntities"   , "click" , "loadEntity();");
+
+populateRecent(){
+
+  String tabgroup = "Control";
+  String refEntityList  = tabgroup + "/Journal/RecentEntities";
+
+
+  String searchQuery = "SELECT uuid, response "+
+                       "  FROM latestNonDeletedArchEntFormattedIdentifiers join createdmodifiedatby using (uuid) "+                       
+                       " ORDER BY modifiedat desc, response "+
+                       " LIMIT ? "+
+                       "OFFSET ? ";
+
+  populateCursorList(refEntityList, searchQuery, 10);
+  refreshTabgroupCSS(tabgroup);
+
+
+
+  Log.d("Module", "Search query: " + searchQuery);
+
+}
+
+
 newUnit(){
   String tabgroup = "Unit";
 
