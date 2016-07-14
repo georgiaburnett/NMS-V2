@@ -621,7 +621,7 @@ newRow(){
  setUuid(tabgroup, null);
  newTabGroup(tabgroup);
  setFieldValue("Row/Row/Parent_Planet_Name", getFieldValue("Transect/General_Information/Planet_Name"));
- setFieldValue("Row/Row/Parent_Unit_ID", getFieldValue("Unit_General_Information/Unit_ID"));
+ setFieldValue("Row/Row/Parent_Unit_ID", getFieldValue("Unit/General_Information/Unit_ID"));
  populateAuthorAndTimestamp(tabgroup);
 
 }
