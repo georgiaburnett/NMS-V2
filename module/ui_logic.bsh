@@ -1905,20 +1905,36 @@ newTransect(){
 
 
 
-loadTransectFrom(String uuid) {
-  String tabgroup = "Transect";
-  setUuid(tabgroup, uuid);
-  if (isNull(uuid)) return;
-  ref = "Control/Identifiers/Next_Unit_ID";
-  unitQuery = "SELECT max(measure)+1 from latestnondeletedaentvalue join attributekey using (attributeid) where attributename = 'Unit_ID'";
-  fetchOne(unitQuery, new FetchCallback() {
-    onFetch(result) { 
-      if (isNull(result)) setFieldValue(ref, "1"          );
-      else                setFieldValue(ref, result.get(0));
-    }
-  });
 
-  showTabGroup(tabgroup, uuid);
+setFieldToIdentifier(String identiferType, String lotRef) {
+
+  String q = "";
+  q += "SELECT uuid, response ";
+  q += "FROM latestnondeletedarchentformattedidentifiers join createdmodifiedatby using (uuid)";
+  q += "WHERE aenttypename = '%s' ";
+  q += "ORDER BY modifiedat desc ";
+  q += "LIMIT 1 ";
+  q  = replaceFirst(q, "%s", identiferType);
+
+  cb = new FetchCallback() {
+    onFetch(result) {
+      contextIdentifer  = result.get(1);
+
+      populateWebViewHtml(lotRef, contextIdentifer);
+    }
+  };
+
+  fetchOne(q, cb);
+}
+
+// Regex-free string replacement function
+replaceFirst(haystack, needle, replacement) {
+  i = haystack.indexOf(needle);
+  if (i == -1)           return haystack;
+  if (needle.equals("")) return haystack;
+  pre  = haystack.substring(0, i                                   );
+  post = haystack.substring(   i+needle.length(), haystack.length());
+  return pre + replacement + post;
 }
 
 
@@ -1928,8 +1944,20 @@ newOrbit(){
   newTabGroup(tabgroup);
   setFieldValue("Orbit/Orbit/Parent_Planet_Name", getFieldValue("Transect/General_Information/Planet_Name"));
   populateAuthorAndTimestamp(tabgroup);
+  setFieldToIdentifier("Orbit", "Orbit/Orbit/Last_Orbit_Number");
 }
 
+
+newRow(){
+  String tabgroup = "Row";
+
+
+  setUuid(tabgroup, null);
+  newTabGroup(tabgroup);
+  populateAuthorAndTimestamp(tabgroup);
+  setFieldToIdentifier("Row", "Row/Row/Last_Row_Number");
+
+}
 
 
 /******************************************************************************/

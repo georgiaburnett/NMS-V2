@@ -581,12 +581,6 @@ newTransect(){
 
 
 setFieldToIdentifier(String identiferType, String lotRef) {
-  
-
-  if (isNull(uuid)) {
-    populateWebViewHtml(lotRef, "&nbsp;");
-    return;
-  }
 
   String q = "";
   q += "SELECT uuid, response ";

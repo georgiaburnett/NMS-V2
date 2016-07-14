@@ -208,6 +208,7 @@
           <Row>
             <Row>
               <Row_Number/>
+              <Last_Row_Number/>
               <Parent_Unit_ID/>
               <Parent_Planet_Name/>
               <Metal/>
@@ -851,6 +852,9 @@
         <label>{Row}</label>
         <input faims_attribute_type="measure" ref="Row_Number" faims_attribute_name="Row Number" faims_style_class="required">
           <label>{Row_Number}</label>
+        </input>
+        <input faims_attribute_type="measure" ref="Last_Row_Number" faims_attribute_name="Last Row Number" faims_read_only="true">
+          <label>{Last_Row_Number}</label>
         </input>
         <input faims_attribute_type="measure" ref="Parent_Unit_ID" faims_attribute_name="Parent Unit ID" faims_read_only="true">
           <label>{Parent_Unit_ID}</label>
