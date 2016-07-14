@@ -16,7 +16,7 @@
       Recent Entities
     </RecentEntities>
   </Main>
-  <Journal>
+  <Journal f="noscroll">
     <New_Journal_Entry t="button" l="Journal"/>
     <RecentEntities t="list">
       Recent Entities
@@ -172,7 +172,7 @@
       </EndTimestampTrigger>
     </cols>
   </Revisit>
-  <Unit>
+  <Unit f="noscroll">
     <New_Unit t="button" lc="Unit"/>
     <Unit_List t="list" ec="Unit" />
   </Unit>
@@ -295,7 +295,7 @@
       <desc>Attach a screengrab using this feature. Can be uploaded from you device - locally via cloud software like Dropbox - or post fact.</desc>
     </Attach_a_Screengrab>
   </Survey_Procedure>
-  <Survey_Record>
+  <Survey_Record f="noscroll">
     <New_Survey_Row t="button" lc="Row"/>
     <Row_List t="list" ec="Row" />
   </Survey_Record>
