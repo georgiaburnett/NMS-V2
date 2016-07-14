@@ -12,7 +12,9 @@
 <Control f="nodata">
   <Main f="noscroll">
     <New_Transect t="button" l="Transect"/>
-    <RecentEntities t="list"/>
+    <RecentEntities t="list">
+    	Recent Entities
+    </RecentEntities>
   </Main>
   <Journal>
     <New_Journal_Entry t="button" l="Journal"/>
@@ -38,18 +40,13 @@
         Record Start Timestamp
       </StartTimestampTrigger>
     </cols>
-    <Transect_ID f="id autonum notnull">
-      <str>
-        <pos>1</pos>
-        <fmt>Transect $2</fmt>
-      </str>
-    </Transect_ID>
     <Planet_Name f="id notnull">
       <str>
-        <pos>2</pos>
-        <fmt>-$2</fmt>
+        <pos>1</pos>
+        <fmt>$2</fmt>
       </str>
     </Planet_Name>
+    <Planet_Nickname f="notnull" />
     <author>
       Surveyor
     </author>
@@ -187,10 +184,17 @@
   <Orbit>
     <Orbit_Number b="decimal" f="id notnull">
       <str>
-        <pos>3</pos>
+        <pos>2</pos>
         <fmt> - Orbit $2</fmt>
       </str>
-    </Orbit_Number>    
+    </Orbit_Number>
+    <Last_Orbit_Number f="id readonly" />
+    <Parent_Planet_Name>
+      <str>
+      	<pos>1</pos>
+      	<fmt>$2</fmt>
+      </str>
+    </Parent_Planet_Name>
     <Agriculture b="decimal"/>
     <Architecture b="decimal"/>
     <Communications b="decimal" />
@@ -210,7 +214,7 @@
   <General_Information>
     <Unit_ID f="id autonum notnull">
       <str>
-        <pos>4</pos>
+        <pos>2</pos>
         <fmt> - Unit $2</fmt>
       </str>
     </Unit_ID>
@@ -222,16 +226,10 @@
         Record Start Timestamp
       </StartTimestampTrigger>
     </cols>
-    <Parent_Transect_ID f="id readonly">
-      <str>
-        <pos>1</pos>
-        <fmt>Transect $2</fmt>
-      </str>
-    </Parent_Transect_ID>
     <Parent_Planet_Name f="id readonly">
       <str>
-        <pos>2</pos>
-        <fmt> - $2</fmt>
+        <pos>1</pos>
+        <fmt>$2</fmt>
       </str>      
     </Parent_Planet_Name>
     <author>
@@ -427,10 +425,22 @@
   <Row>
     <Row_Number b="decimal" f="id notnull">
       <str>
-        <pos>5</pos>
+        <pos>3</pos>
         <fmt> - Row $2</fmt>
       </str>
     </Row_Number>
+    <Parent_Unit_ID f="id readonly">
+      <str>
+        <pos>2</pos>
+        <fmt> - Unit $2</fmt>
+      </str>      
+    </Parent_Unit_ID>
+    <Parent_Planet_Name f="id readonly">
+      <str>
+        <pos>1</pos>
+        <fmt>$2</fmt>
+      </str>      
+    </Parent_Planet_Name>
     <Metal b="decimal"/>
     <Sherd b="decimal"/>
     <Lithic b="decimal"/>
