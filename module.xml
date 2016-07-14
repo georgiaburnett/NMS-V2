@@ -608,6 +608,24 @@ replaceFirst(haystack, needle, replacement) {
   return pre + replacement + post;
 }
 
+newOrbit(){
+ String tabgroup = "Orbit";
+ setUuid(tabgroup, null);
+ newTabGroup(tabgroup);
+ setFieldValue("Orbit/Orbit/Parent_Planet_Name", getFieldValue("Transect/General_Information/Planet_Name"));
+ populateAuthorAndTimestamp(tabgroup);
+}
+
+
+newRow(){
+ String tabgroup = "Row";
+ setUuid(tabgroup, null);
+ newTabGroup(tabgroup);
+ setFieldValue("Row/Row/Parent_Planet_Name", getFieldValue("Transect/General_Information/Planet_Name"));
+ populateAuthorAndTimestamp(tabgroup);
+
+}
+
 </logic>
 
 </module>
