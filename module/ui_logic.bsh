@@ -845,10 +845,6 @@ onClickControlNewJournalEntry () {
   parentTabgroup__ = "Control";
   newJournal();
 }
-onClickUnitFinishUnit () {
-  // TODO: Add some things which should happen when this element is clicked
-  newTab("Control", true);
-}
 onClickTransectNewOrbit () {
   // TODO: Add some things which should happen when this element is clicked
   String tabgroup = "Transect";
@@ -889,7 +885,6 @@ addOnEvent("Control/Journal/New_Journal_Entry", "click", "onClickControlNewJourn
 addOnEvent("Transect/Orbits/New_Orbit", "click", "onClickTransectNewOrbit()");
 addOnEvent("Transect/Unit/New_Unit", "click", "onClickTransectNewUnit()");
 addOnEvent("Unit/Survey_Record/New_Survey_Row", "click", "onClickUnitNewSurveyRow()");
-addOnEvent("Unit/Revisit_Unit/Finish_Unit", "click", "onClickUnitFinishUnit()");
 
 
 /******************************************************************************/
@@ -1937,25 +1932,22 @@ replaceFirst(haystack, needle, replacement) {
   return pre + replacement + post;
 }
 
-
 newOrbit(){
-  String tabgroup = "Orbit";
-  setUuid(tabgroup, null);
-  newTabGroup(tabgroup);
-  setFieldValue("Orbit/Orbit/Parent_Planet_Name", getFieldValue("Transect/General_Information/Planet_Name"));
-  populateAuthorAndTimestamp(tabgroup);
-  setFieldToIdentifier("Orbit", "Orbit/Orbit/Last_Orbit_Number");
+ String tabgroup = "Orbit";
+ setUuid(tabgroup, null);
+ newTabGroup(tabgroup);
+ setFieldValue("Orbit/Orbit/Parent_Planet_Name", getFieldValue("Transect/General_Information/Planet_Name"));
+ populateAuthorAndTimestamp(tabgroup);
 }
 
 
 newRow(){
-  String tabgroup = "Row";
-
-
-  setUuid(tabgroup, null);
-  newTabGroup(tabgroup);
-  populateAuthorAndTimestamp(tabgroup);
-  setFieldToIdentifier("Row", "Row/Row/Last_Row_Number");
+ String tabgroup = "Row";
+ setUuid(tabgroup, null);
+ newTabGroup(tabgroup);
+ setFieldValue("Row/Row/Parent_Planet_Name", getFieldValue("Transect/General_Information/Planet_Name"));
+ setFieldValue("Row/Row/Parent_Unit_ID", getFieldValue("Unit/General_Information/Unit_ID"));
+ populateAuthorAndTimestamp(tabgroup);
 
 }
 

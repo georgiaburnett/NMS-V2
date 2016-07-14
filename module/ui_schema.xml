@@ -112,15 +112,12 @@
             </Revisit>
             <Unit>
               <New_Unit/>
-              <Next_Unit_ID/>
-              <Next_Journal_Entry_Number/>
               <Unit_List/>
             </Unit>
           </Transect>
           <Orbit>
             <Orbit>
               <Orbit_Number/>
-              <Last_Orbit_Number/>
               <Parent_Planet_Name/>
               <Agriculture/>
               <Architecture/>
@@ -202,13 +199,11 @@
                   <EndTimestampTrigger/>
                 </Col_1>
               </Colgroup_0>
-              <Finish_Unit/>
             </Revisit_Unit>
           </Unit>
           <Row>
             <Row>
               <Row_Number/>
-              <Last_Row_Number/>
               <Parent_Unit_ID/>
               <Parent_Planet_Name/>
               <Metal/>
@@ -246,8 +241,6 @@
       <bind type="decimal" nodeset="/faims/Transect/Survey_Procedure/Area_Surveyed"/>
       <bind type="decimal" nodeset="/faims/Transect/Survey_Procedure/Bearing"/>
       <bind type="decimal" nodeset="/faims/Transect/Planetary_Coverage/Percentage_of_Visable_Surface"/>
-      <bind type="decimal" nodeset="/faims/Control/Identifiers/Next_Unit_ID"/>
-      <bind type="decimal" nodeset="/faims/Control/Identifiers/Next_Journal_Entry_Number"/>
       <bind type="decimal" nodeset="/faims/Orbit/Orbit/Orbit_Number"/>
       <bind type="decimal" nodeset="/faims/Orbit/Orbit/Agriculture"/>
       <bind type="decimal" nodeset="/faims/Orbit/Orbit/Architecture"/>
@@ -489,7 +482,7 @@
           <label>{Button_Attach_a_Screengrab}</label>
         </trigger>
       </group>
-      <group ref="Orbits">
+      <group ref="Orbits" faims_scrollable="false">
         <label>{Orbits}</label>
         <trigger ref="New_Orbit">
           <label>{New_Orbit}</label>
@@ -561,12 +554,6 @@
         <trigger ref="New_Unit">
           <label>{New_Unit}</label>
         </trigger>
-        <input ref="Next_Unit_ID" faims_style_class="required">
-          <label>{Next_Unit_ID}</label>
-        </input>
-        <input ref="Next_Journal_Entry_Number" faims_style_class="required">
-          <label>{Next_Journal_Entry_Number}</label>
-        </input>
         <select1 appearance="compact" ref="Unit_List" faims_annotation="false" faims_certainty="false">
           <label>{Unit_List}</label>
           <item>
@@ -582,9 +569,6 @@
         <label>{Orbit}</label>
         <input faims_attribute_type="measure" ref="Orbit_Number" faims_attribute_name="Orbit Number" faims_style_class="required">
           <label>{Orbit_Number}</label>
-        </input>
-        <input faims_attribute_type="measure" ref="Last_Orbit_Number" faims_attribute_name="Last Orbit Number" faims_read_only="true">
-          <label>{Last_Orbit_Number}</label>
         </input>
         <input faims_attribute_type="measure" ref="Parent_Planet_Name" faims_attribute_name="Parent Planet Name">
           <label>{Parent_Planet_Name}</label>
@@ -841,9 +825,6 @@
             </trigger>
           </group>
         </group>
-        <trigger ref="Finish_Unit">
-          <label>{Finish_Unit}</label>
-        </trigger>
       </group>
     </group>
     <group ref="Row" faims_archent_type="Row">
@@ -852,9 +833,6 @@
         <label>{Row}</label>
         <input faims_attribute_type="measure" ref="Row_Number" faims_attribute_name="Row Number" faims_style_class="required">
           <label>{Row_Number}</label>
-        </input>
-        <input faims_attribute_type="measure" ref="Last_Row_Number" faims_attribute_name="Last Row Number" faims_read_only="true">
-          <label>{Last_Row_Number}</label>
         </input>
         <input faims_attribute_type="measure" ref="Parent_Unit_ID" faims_attribute_name="Parent Unit ID" faims_read_only="true">
           <label>{Parent_Unit_ID}</label>
