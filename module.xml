@@ -175,7 +175,6 @@
   </Revisit>
   <Unit>
     <New_Unit t="button" lc="Unit"/>
-    <autonum/>
     <Unit_List t="list" ec="Unit" />
   </Unit>
 </Transect>
