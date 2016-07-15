@@ -515,11 +515,11 @@ setStartTimestamp_Journal() {
   setTimestamp(ref);
 }
 
-addOnEvent("Transect/General_Information", "show", "populateRecent()");
+addOnEvent("Control/Main", "show", "populateRecentMain()");
 addOnEvent("Control/Main/RecentEntities"   , "click" , "loadEntity();");
 
 
-populateRecent(){
+populateRecentMain(){
 
   String tabgroup = "Control";
   String refEntityList  = tabgroup + "/Main/RecentEntities";
@@ -527,6 +527,7 @@ populateRecent(){
 
   String searchQuery = "SELECT uuid, response "+
                        "  FROM latestNonDeletedArchEntFormattedIdentifiers join createdmodifiedatby using (uuid) "+                       
+                       " where aenttypename != 'Journal' "+                       
                        " ORDER BY modifiedat desc, response "+
                        " LIMIT ? "+
                        "OFFSET ? ";
@@ -541,17 +542,18 @@ populateRecent(){
 }
 
 
-addOnEvent("Journal/Journal", "show", "populateRecent()");
+addOnEvent("Control/Journal", "show", "populateRecentJournal()");
 addOnEvent("Control/Journal/RecentEntities"   , "click" , "loadEntity();");
 
-populateRecent(){
+populateRecentJournal(){
 
   String tabgroup = "Control";
   String refEntityList  = tabgroup + "/Journal/RecentEntities";
 
 
   String searchQuery = "SELECT uuid, response "+
-                       "  FROM latestNonDeletedArchEntFormattedIdentifiers join createdmodifiedatby using (uuid) "+                       
+                       "  FROM latestNonDeletedArchEntFormattedIdentifiers join createdmodifiedatby using (uuid) "+    
+                       " where aenttypename = 'Journal' "+                       
                        " ORDER BY modifiedat desc, response "+
                        " LIMIT ? "+
                        "OFFSET ? ";
