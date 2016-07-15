@@ -186,7 +186,7 @@
         <fmt>- Orbit $2</fmt>
       </str>
     </Orbit_Number>
-    <Parent_Planet_Name f="id">
+    <Parent_Planet_Name f="id readonly">
       <str>
         <pos>1</pos>
         <fmt>$2</fmt>
@@ -201,9 +201,7 @@
     <Mining b="decimal" />
     <Transport b="decimal"/>
     <Settlement b="decimal"/>
-    <Other b="decimal">
-      <desc>Please identify "other" using an annotation.</desc>
-    </Other>
+    <Other />
   </Orbit>
 </Orbit>
 
