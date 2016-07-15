@@ -788,6 +788,7 @@ populateAuthorAndTimestamp(String tabgroup) {
   Map tabgroupToTimestamp = new HashMap();
   tabgroupToAuthor.put("Transect", "Transect/General_Information/author");
   tabgroupToAuthor.put("Unit", "Unit/General_Information/author");
+  tabgroupToAuthor.put("Journal", "Journal/Journal/author");
 
   String authorPath    = tabgroupToAuthor.get(tabgroup);
   String timestampPath = tabgroupToTimestamp.get(tabgroup);
@@ -1845,6 +1846,31 @@ populateRecent(){
 
   String tabgroup = "Control";
   String refEntityList  = tabgroup + "/Main/RecentEntities";
+
+
+  String searchQuery = "SELECT uuid, response "+
+                       "  FROM latestNonDeletedArchEntFormattedIdentifiers join createdmodifiedatby using (uuid) "+                       
+                       " ORDER BY modifiedat desc, response "+
+                       " LIMIT ? "+
+                       "OFFSET ? ";
+
+  populateCursorList(refEntityList, searchQuery, 10);
+  refreshTabgroupCSS(tabgroup);
+
+
+
+  Log.d("Module", "Search query: " + searchQuery);
+
+}
+
+
+addOnEvent("Journal/Journal", "show", "populateRecent()");
+addOnEvent("Control/Journal/RecentEntities"   , "click" , "loadEntity();");
+
+populateRecent(){
+
+  String tabgroup = "Control";
+  String refEntityList  = tabgroup + "/Journal/RecentEntities";
 
 
   String searchQuery = "SELECT uuid, response "+

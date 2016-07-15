@@ -228,6 +228,7 @@
                 </Col_1>
               </Colgroup_0>
               <Journal_Entry_Number/>
+              <author/>
               <Journal/>
             </Journal>
           </Journal>
@@ -251,7 +252,6 @@
       <bind type="decimal" nodeset="/faims/Orbit/Orbit/Mining"/>
       <bind type="decimal" nodeset="/faims/Orbit/Orbit/Transport"/>
       <bind type="decimal" nodeset="/faims/Orbit/Orbit/Settlement"/>
-      <bind type="decimal" nodeset="/faims/Orbit/Orbit/Other"/>
       <bind type="decimal" nodeset="/faims/Unit/General_Information/Unit_ID"/>
       <bind type="decimal" nodeset="/faims/Unit/General_Information/Number_of_Items_Unit"/>
       <bind type="decimal" nodeset="/faims/Unit/Survey_Procedure/Area_Surveyed_Unit"/>
@@ -321,7 +321,7 @@
           </item>
         </select1>
       </group>
-      <group ref="Journal">
+      <group ref="Journal" faims_scrollable="false">
         <label>{Journal}</label>
         <trigger ref="New_Journal_Entry">
           <label>{New_Journal_Entry}</label>
@@ -549,7 +549,7 @@
           </group>
         </group>
       </group>
-      <group ref="Unit">
+      <group ref="Unit" faims_scrollable="false">
         <label>{Unit}</label>
         <trigger ref="New_Unit">
           <label>{New_Unit}</label>
@@ -570,7 +570,7 @@
         <input faims_attribute_type="measure" ref="Orbit_Number" faims_attribute_name="Orbit Number" faims_style_class="required">
           <label>{Orbit_Number}</label>
         </input>
-        <input faims_attribute_type="measure" ref="Parent_Planet_Name" faims_attribute_name="Parent Planet Name">
+        <input faims_attribute_type="measure" ref="Parent_Planet_Name" faims_attribute_name="Parent Planet Name" faims_read_only="true">
           <label>{Parent_Planet_Name}</label>
         </input>
         <input faims_attribute_type="measure" ref="Agriculture" faims_attribute_name="Agriculture">
@@ -708,7 +708,7 @@
           <label>{Button_Attach_a_Screengrab}</label>
         </trigger>
       </group>
-      <group ref="Survey_Record">
+      <group ref="Survey_Record" faims_scrollable="false">
         <label>{Survey_Record}</label>
         <trigger ref="New_Survey_Row">
           <label>{New_Survey_Row}</label>
@@ -890,6 +890,10 @@
         </group>
         <input faims_attribute_type="measure" ref="Journal_Entry_Number" faims_attribute_name="Journal Entry Number" faims_style_class="required">
           <label>{Journal_Entry_Number}</label>
+        </input>
+        <input ref="author" faims_attribute_name="Journal author" faims_attribute_type="measure" faims_read_only="true" faims_annotation="false" faims_certainty="false">
+          <label>{Author}</label>
+          <!--WARNING: Flags ignored-->
         </input>
         <input faims_attribute_type="measure" ref="Journal" faims_attribute_name="Journal" faims_style_class="required">
           <label>{Journal}</label>
