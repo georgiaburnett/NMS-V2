@@ -31,6 +31,7 @@
 </Control>
 
 <Transect>
+  
   <General_Information>
     <cols>
       <StartTimestamp>
@@ -44,6 +45,9 @@
       </StartTimestampTrigger>
     </cols>
     <Planet_Name f="id notnull">
+      <desc>
+        Official name of the planet as it appears in the game (or as it is called by its indigenous population).
+      </desc>
       <str>
         <pos>1</pos>
         <fmt>$2</fmt>
@@ -59,7 +63,7 @@
     </author>
     <Geotag f="notnull">
       <desc>
-        Alphanumeric, recording the precise location of the planet being surveyed. This will be updated as we figure out how NMS uses co-ordinates, location, etc. Stay tuned!
+        Alphanumeric, recording the precise location of the planet being surveyed. 
       </desc>
     </Geotag>
     <Number_Of_Orbits b="decimal" f="notnull">
@@ -96,6 +100,7 @@
       </desc>
     </Location_and_description>
   </General_Information>
+  
   <Survey_Procedure>
     <Area_Surveyed b="decimal" f="notnull">
       Area Surveyed (sq. km.)
@@ -337,7 +342,7 @@
     <Geotag_Unit f="notnull">
       Geotag
       <desc>
-        Enter the coordinates for the area being walked. This will be updated as we figure out how NMS uses co-ordinates, location, etc. Stay tuned!
+        Enter the coordinates for the area being walked. 
       </desc>
     </Geotag_Unit>
     <Survey_Procedure_Unit t="dropdown" f="notnull">
