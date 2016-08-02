@@ -278,6 +278,7 @@
       <desc>
         Count any communications features spotted on the flyover (e.g., antennae). Annotate as needed.
       </desc>
+    </Communications>
     <Cultural b="decimal">
       <desc>
         Count any cultural features spotted on the flyover (e.g., art, statues). Annotate as needed.
@@ -302,6 +303,7 @@
       <desc>
         Count any transportation features spotted on the flyover (e.g., launchpads). Annotate as needed.
       </desc>
+    </Transport>
     <Settlement b="decimal">
       <desc>
         Count any settlements spotted on the flyover (e.g., villages). Annotate as needed.
@@ -637,22 +639,27 @@
       <desc>
         Count any technology encountered on the walk through. Annotate as needed.
       </desc>
+    </Technology>
     <Structure b="decimal">
       <desc>
         Count any structures encountered on the walk through (e.g., buildings). Annotate as needed.
       </desc>
+    </Structure>
     <Wreck b="decimal">
       <desc>
         Count any wrecks encountered on the walk through (e.g., ships, etc.). Annotate as needed.
       </desc>
+    </Wreck>
     <Monolith b="decimal">
       <desc>
         Count any monoliths encountered on the walk through. Annotate as needed.
       </desc>
+    </Monolith>
     <Settlement b="decimal">
       <desc>
         Count any settlements encountered on the walk through. Annotate as needed.
       </desc>
+    </Settlement>
     <Other b="decimal">
       <desc>
         Count any other items encountered on the flyover. Annotate.      
