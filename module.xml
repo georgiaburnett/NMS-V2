@@ -55,7 +55,7 @@
     </Planet_Name>
     <Planet_Nickname f="notnull">
       <desc>
-        Surveyor-assigned name for record-keeping purposes in the format of Surame-PlanetNumber.
+        Surveyor-assigned name for record-keeping purposes in the format of Surname-PlanetNumber.
       </desc>
     </Planet_Nickname>
     <author>
@@ -687,7 +687,7 @@
     </author>
     <Journal f="notnull"/>
   </Journal>
-  
+
 </Journal>
 
 <logic>
