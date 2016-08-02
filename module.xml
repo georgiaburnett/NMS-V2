@@ -338,7 +338,6 @@
           Tap this button to enter the time and date of the walking survey.
         </desc>
       </StartTimestamp>
-      </StartTimestamp>
       <StartTimestampTrigger t="button">
         Record Start Timestamp
       </StartTimestampTrigger>
@@ -412,7 +411,7 @@
           <opt>N</opt>
           <opt>NE</opt>
           <opt>E</opt>
-          <opt>SE
+          <opt>SE</opt>
           <opt>S</opt>
           <opt>SW</opt>
           <opt>W</opt>
@@ -425,7 +424,7 @@
           <opt>N</opt>
           <opt>NE</opt>
           <opt>E</opt>
-          <opt>SE
+          <opt>SE</opt>
           <opt>S</opt>
           <opt>SW</opt>
           <opt>W</opt>
@@ -463,7 +462,9 @@
   <Vegetation_and_Land_Use>
     <Dominant_Vegetation_Land_Use t="checkbox" f="notnull">
       Dominant vegetation and land use:
-      <desc>Check all that apply. Use the annotation feature on "other" to identify any other vegetation or land use.</desc>
+      <desc>
+        Check all that apply. Use the annotation feature on "other" to identify any other vegetation or land use.
+      </desc>
       <opts>
         <opt>Coniferous</opt>
         <opt>Deciduous</opt> 
