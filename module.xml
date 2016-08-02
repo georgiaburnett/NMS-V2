@@ -231,6 +231,9 @@
     <cols>
       <EndTimestamp>
         End Timestamp
+      <desc>
+        Tap this button after completing the survey prior to visiting the next unit.
+      </desc>
       </EndTimestamp>
       <EndTimestampTrigger t="button">
         Record End Timestamp
@@ -623,47 +626,47 @@
     </Parent_Planet_Name>
     <Metal b="decimal">
       <desc>
-        Count any metal items encountered on the walk through. Annotate as needed.
+        Count any metal items encountered on the walkthrough. Annotate as needed.
       </desc>
     </Metal>
     <Sherd b="decimal">
       <desc>
-        Count any sherds encountered on the walk through. Annotate as needed.
+        Count any sherds encountered on the walkthrough. Annotate as needed.
       </desc>
     </Sherd>
     <Lithic b="decimal">
       <desc>
-        Count any lithics encountered on the walk through. Annotate as needed.
+        Count any lithics encountered on the walkthrough. Annotate as needed.
       </desc>
     </Lithic>
     <Technology b="decimal">
       <desc>
-        Count any technology encountered on the walk through. Annotate as needed.
+        Count any technology encountered on the walkthrough. Annotate as needed.
       </desc>
     </Technology>
     <Structure b="decimal">
       <desc>
-        Count any structures encountered on the walk through (e.g., buildings). Annotate as needed.
+        Count any structures encountered on the walkthrough (e.g., buildings). Annotate as needed.
       </desc>
     </Structure>
     <Wreck b="decimal">
       <desc>
-        Count any wrecks encountered on the walk through (e.g., ships, etc.). Annotate as needed.
+        Count any wrecks encountered on the walkthrough (e.g., ships, etc.). Annotate as needed.
       </desc>
     </Wreck>
     <Monolith b="decimal">
       <desc>
-        Count any monoliths encountered on the walk through. Annotate as needed.
+        Count any monoliths encountered on the walkthrough. Annotate as needed.
       </desc>
     </Monolith>
     <Settlement b="decimal">
       <desc>
-        Count any settlements encountered on the walk through. Annotate as needed.
+        Count any settlements encountered on the walkthrough. Annotate as needed.
       </desc>
     </Settlement>
     <Other b="decimal">
       <desc>
-        Count any other items encountered on the flyover. Annotate.      
+        Count any other items encountered on the walkthrough. Annotate.      
       </desc>
     </Other>
   </Row>
