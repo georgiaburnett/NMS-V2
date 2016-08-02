@@ -672,7 +672,7 @@ validateUnit() {
 
   f.add(fieldPair("Unit/General_Information/Unit_ID", "{Unit_ID}"));
   f.add(fieldPair("Unit/General_Information/Geotag_Unit", "{Geotag}"));
-  f.add(fieldPair("Unit/General_Information/Survey_Procedure_Unit", "{Survey_Procedure_Unit}"));
+  f.add(fieldPair("Unit/General_Information/Survey_Procedure_Unit", "{Survey_Procedure}"));
   f.add(fieldPair("Unit/General_Information/Survey_State_Unit", "{Is_the_area___}"));
   f.add(fieldPair("Unit/General_Information/Number_of_Items_Unit", "{Number_of_Items}"));
   f.add(fieldPair("Unit/Survey_Procedure/Area_Surveyed_Unit", "{Area_Surveyed__sq__km__}"));

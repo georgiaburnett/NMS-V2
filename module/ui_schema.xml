@@ -252,6 +252,7 @@
       <bind type="decimal" nodeset="/faims/Orbit/Orbit/Mining"/>
       <bind type="decimal" nodeset="/faims/Orbit/Orbit/Transport"/>
       <bind type="decimal" nodeset="/faims/Orbit/Orbit/Settlement"/>
+      <bind type="decimal" nodeset="/faims/Orbit/Orbit/Other"/>
       <bind type="decimal" nodeset="/faims/Unit/General_Information/Unit_ID"/>
       <bind type="decimal" nodeset="/faims/Unit/General_Information/Number_of_Items_Unit"/>
       <bind type="decimal" nodeset="/faims/Unit/Survey_Procedure/Area_Surveyed_Unit"/>
@@ -265,6 +266,7 @@
       <bind type="decimal" nodeset="/faims/Row/Row/Wreck"/>
       <bind type="decimal" nodeset="/faims/Row/Row/Monolith"/>
       <bind type="decimal" nodeset="/faims/Row/Row/Settlement"/>
+      <bind type="decimal" nodeset="/faims/Row/Row/Other"/>
       <bind type="decimal" nodeset="/faims/Journal/Journal/Journal_Entry_Number"/>
     </model>
   </h:head>
@@ -637,7 +639,7 @@
           <label>{Geotag}</label>
         </input>
         <select1 faims_attribute_type="vocab" ref="Survey_Procedure_Unit" faims_attribute_name="Survey Procedure Unit" faims_style_class="required">
-          <label>{Survey_Procedure_Unit}</label>
+          <label>{Survey_Procedure}</label>
           <item>
             <label>Options not loaded</label>
             <value>0</value>
@@ -795,7 +797,7 @@
           <label>{Comment_on_field_conditions}</label>
         </input>
         <input faims_attribute_type="measure" ref="Features_Unit" faims_attribute_name="Features Unit">
-          <label>{Features}</label>
+          <label>{Comment_on_Features}</label>
         </input>
       </group>
       <group ref="Revisit_Unit">
